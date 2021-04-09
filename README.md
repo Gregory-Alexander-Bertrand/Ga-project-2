@@ -34,4 +34,4 @@ When the user returns to their profile, the words the saved/liked last time will
 | Routes     | Path    | Summary                                 |           
 | -----------|---------|-----------------------------------------|                          
 | Search     | GET     | user needs to look up words.            |
-| Update     | PUT     | for maybe when user needs to update word.
+| Update     | PUT     | for maybe when user needs to update word|
