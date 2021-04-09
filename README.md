@@ -31,7 +31,14 @@ When the user returns to their profile, the words the saved/liked last time will
 
 ## ROUTES INVENTORY
 
-| Routes     | Path    | Summary                                 |           
-| -----------|---------|-----------------------------------------|                          
-| Search     | GET     | user needs to look up words.            |
-| Update     | PUT     | for maybe when user needs to update word|
+
+| Routes     | Path                     | Summary                                 |           
+| -----------|--------------------------|-----------------------------------------|                          
+| Post       | /word/search             | user needs to look up words.            |
+| Put        | /word/update             | for maybe when user needs to update word|
+| Post       | /search                  | for user login.                         |
+| Post       | /signup                  | for user sign-up.                       |  
+| Delete     | /word/delete             | Used for user's to remove word for list.|
+| Post       | /word/save               | Used for user to save word.             |
+| Get        | /word/findAll            | Find all words user has saved.          |
+
