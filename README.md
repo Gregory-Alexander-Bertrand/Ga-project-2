@@ -17,17 +17,17 @@ When the user is finished, they can logout.
 When the user returns to their profile, the words the saved/liked last time will appear in a box.
 
 ## MVPS
-*a search bar to look up words.
-*a place to display information on the words.
-*a way to save words.
-*a backend server to house user information.
-*a way for a user to make a profile.
+* a search bar to look up words.
+* a place to display information on the words.
+* a way to save words.
+* a backend server to house user information.
+* a way for a user to make a profile.
 
 ## STRETCH GOALS
-*a way for users to view other user's profiles and word list.
-*a way for users to add friends.
-*a way for users to add their own list of synonyms or other information etymology.
-*a way for users to get a translation into a language of their choosing.
+* a way for users to view other user's profiles and word list.
+* a way for users to add friends.
+* a way for users to add their own list of synonyms or other information etymology.
+* a way for users to get a translation into a language of their choosing.
 
 ## ROUTES INVENTORY
 
