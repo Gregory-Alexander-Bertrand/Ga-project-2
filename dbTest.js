@@ -12,8 +12,8 @@ const models = require('./models/user')
 
 // createUserTest()
 
-models.user.create({
-    name: 'john',
-    email: 'johndoe@email.com',
-    password: 'password'
-})
+// models.user.create({
+//     name: 'john',
+//     email: 'johndoe@email.com',
+//     password: 'password'
+// })
