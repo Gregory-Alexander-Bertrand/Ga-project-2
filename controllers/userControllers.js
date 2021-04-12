@@ -23,12 +23,14 @@ userControllers.login = async (req, res) => {
         }
     })
     if (user && (user.password === req.body.password)) {
-        res.status(200)
+        // res.status(200)
+        console.log(user)
         res.json({id: user.id, name: user.name})
-        res.json({message: 'login sucess', user: user})
+        // res.json({message: 'login sucess', user: user})
     } else {
         res.status(401)
         // res.json({error: 'login failed'})
+        console.log({error: 'login failed'})
     }
 }
 
