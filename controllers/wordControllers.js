@@ -4,7 +4,7 @@ const wordControllers = {}
 
 wordControllers.search = async (req, res) => {
     try {
-        let search = await axios.post('https://api.dictionaryapi.dev/api/v2/entries/en_US/<word>$')
+        let search = await axios.post('https://api.dictionaryapi.dev/api/v2/entries/en_US/<word>')
         console.log(search)
         res.send(search)
     } catch (error) {
