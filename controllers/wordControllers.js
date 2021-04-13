@@ -4,9 +4,9 @@ const wordControllers = {}
 
 wordControllers.search = async (req, res) => {
     try {
-        let search = await axios.post('https://api.dictionaryapi.dev/api/v2/entries/en_US/<word>')
+        let search = await axios.get(`https://dictionaryapi.com/api/v3/references/collegiate/json/${req.body.word}?key=ac3df2b2-fb26-4c50-9822-45655d18ed94`)
         console.log(search)
-        res.send(search)
+        res.send(search.data)
     } catch (error) {
         console.log(error)
         res.json({error})
@@ -15,7 +15,25 @@ wordControllers.search = async (req, res) => {
 
 wordControllers.update = async (req, res) => {
     try {
-        let update = await axios.put(`https://api.dictionaryapi.dev/api/v2/entries/en_US/<word>`)
+        let update = await axios.put(`https://dictionaryapi.com/api/v3/references/collegiate/json/"+word+"?key=ac3df2b2-fb26-4c50-9822-45655d18ed94`)
+    } catch (error) {
+        console.log(error)
+        res.json({error})
+    }
+}
+
+wordControllers.save = async (req, res) => {
+    try {
+        let save = await axios.post(`https://dictionaryapi.com/api/v3/references/collegiate/json/"+word+"?key=ac3df2b2-fb26-4c50-9822-45655d18ed94`)
+    } catch (error) {
+        console.log(error)
+        res.json({error})
+    }
+}
+
+wordControllers.findAll = async (req, res) => {
+   try {
+        let findAll = await axios.get(`https://dictionaryapi.com/api/v3/references/collegiate/json/"+word+"?key=ac3df2b2-fb26-4c50-9822-45655d18ed94`)
     } catch (error) {
         console.log(error)
         res.json({error})
