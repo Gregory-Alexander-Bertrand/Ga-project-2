@@ -43,13 +43,13 @@ wordControllers.save = async (req, res) => {
     }
 }
 
-wordControllers.findAll = async (req, res) => {
-   try {
-        let findAll = await axios.get(`https://dictionaryapi.com/api/v3/references/collegiate/json/"+word+"?key=ac3df2b2-fb26-4c50-9822-45655d18ed94`)
-    } catch (error) {
-        console.log(error)
-        res.json({error})
-    }
-}
+// wordControllers.findAll = async (req, res) => {
+//    try {
+//         let findAll = await axios.get(`https://dictionaryapi.com/api/v3/references/collegiate/json/"+word+"?key=ac3df2b2-fb26-4c50-9822-45655d18ed94`)
+//     } catch (error) {
+//         console.log(error)
+//         res.json({error})
+//     }
+// }
 
 module.exports = wordControllers

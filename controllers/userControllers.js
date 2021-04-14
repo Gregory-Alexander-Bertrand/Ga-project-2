@@ -34,18 +34,18 @@ userControllers.login = async (req, res) => {
     }
 }
 
-userControllers.delete = async (req, res) => {
-    try {
-        let user = await models.user.findOne({
-            where: {
-                id: req.params.id
-            }
-        })
-        console.log(user)
-        res.json({message: 'user removed'})
-    } catch (error) {
-        res.json({error})
-    }
-}
+// userControllers.delete = async (req, res) => {
+//     try {
+//         let user = await models.user.findOne({
+//             where: {
+//                 id: req.params.id
+//             }
+//         })
+//         console.log(user)
+//         res.json({message: 'user removed'})
+//     } catch (error) {
+//         res.json({error})
+//     }
+// }
 
 module.exports = userControllers
