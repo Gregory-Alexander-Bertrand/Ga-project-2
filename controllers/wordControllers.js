@@ -22,12 +22,24 @@ wordControllers.update = async (req, res) => {
     }
 }
 
+// wordControllers.save = async (req, res) => {
+//     try {
+//         let save = await axios.post(`https://dictionaryapi.com/api/v3/references/collegiate/json/${req.body.word}?key=ac3df2b2-fb26-4c50-9822-45655d18ed94`)
+//     } catch (error) {
+//         console.log(error)
+//         res.json({error})
+//     }
+// }
+
 wordControllers.save = async (req, res) => {
     try {
-        let save = await axios.post(`https://dictionaryapi.com/api/v3/references/collegiate/json/"+word+"?key=ac3df2b2-fb26-4c50-9822-45655d18ed94`)
+    const word = await models.word.save({
+        name: req.body.name,
+        notes: req.body.notes
+    })
+        res.json({message: 'word saved', word})
     } catch (error) {
-        console.log(error)
-        res.json({error})
+        res.status(400)
     }
 }
 
