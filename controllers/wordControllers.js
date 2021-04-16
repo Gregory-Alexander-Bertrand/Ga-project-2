@@ -22,6 +22,18 @@ wordControllers.update = async (req, res) => {
     }
 }
 
+wordControllers.create = async (req, res) => {
+    try {
+        let newWord = await models.word.create({
+            name: req.body.name,
+            notes: req.body.note
+        })
+        res.json({newWord})
+    } catch (error) {
+        res.json({error})
+    }
+}
+
 // wordControllers.save = async (req, res) => {
 //     try {
 //         let save = await axios.post(`https://dictionaryapi.com/api/v3/references/collegiate/json/${req.body.word}?key=ac3df2b2-fb26-4c50-9822-45655d18ed94`)
