@@ -64,4 +64,43 @@ userControllers.update = async (req, res) => {
     }
 }
 
+userControllers.saveWord = async (req, res) => {
+    try {
+        const user = await models.user.findOne({
+            where: {
+                id: req.body.userId
+            }
+        })
+
+        const word = await models.word.findOne({
+            where: {
+                id: req.body.wordId
+            }
+        })
+    } catch (error) {
+        res.json({error})
+    }
+}
+
+userControllers.logIn = async (req, res) => {
+    try {
+        const logedInUser = await models.user.findOne({
+            where: {
+                email: req.body.email
+            }
+
+        })
+        if (!logedInUser) {
+            res.json.error({message: 'login failed'})
+        }
+        // const checkPassword = models.user.
+        if (logedInUser.password === req.body.password) {
+            res.json({name: logedInUser.name, id: logedInUser.id})
+        }
+        res.json({error: 'login failed'})
+    } catch (error) {
+        res.json({error})
+    }
+}
+
 module.exports = userControllers

@@ -26,7 +26,8 @@ wordControllers.create = async (req, res) => {
     try {
         let newWord = await models.word.create({
             name: req.body.name,
-            notes: req.body.note
+            notes: req.body.notes,
+            userId: req.body.userId
         })
         res.json({newWord})
     } catch (error) {
@@ -47,7 +48,8 @@ wordControllers.save = async (req, res) => {
     try {
     const word = await models.word.save({
         name: req.body.name,
-        notes: req.body.notes
+        notes: req.body.notes,
+        userId: req.body.userId
     })
         res.json({message: 'word saved', word})
     } catch (error) {
@@ -55,13 +57,18 @@ wordControllers.save = async (req, res) => {
     }
 }
 
-// wordControllers.findAll = async (req, res) => {
-//    try {
-//         let findAll = await axios.get(`https://dictionaryapi.com/api/v3/references/collegiate/json/"+word+"?key=ac3df2b2-fb26-4c50-9822-45655d18ed94`)
-//     } catch (error) {
-//         console.log(error)
-//         res.json({error})
-//     }
-// }
+wordControllers.getAll = async (req, res) =>{
+    try {
+        let words = await models.word.findAll({
+            where: {
+            userId: req.params.id
+            }
+        })
+        console.log(`WORDS`, words)
+        res.json({words})
+    } catch (error) {
+        res.json({error})
+    }
+}
 
 module.exports = wordControllers
